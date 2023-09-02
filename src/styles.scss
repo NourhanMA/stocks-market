@@ -1,0 +1,33 @@
+/* You can add global styles to this file, and also import other style files */
+
+// *{
+//     box-sizing: border-box;
+//     margin: 0;
+//     padding: 0;
+// }
+
+div.card-header {
+  font-size: large;
+}
+
+div.card {
+  margin-top: 10px;
+}
+
+.table {
+  margin-top: 10px;
+  tbody {
+    tr {
+      &:hover {
+        background-color: #f7f7f7;
+      }
+    }
+  }
+}
+
+a {
+  text-decoration: none;
+  &:hover {
+    text-decoration: underline;
+  }
+}

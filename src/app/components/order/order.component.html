@@ -1,0 +1,50 @@
+<div class="container">
+
+  <h2>Orders</h2>
+  <div class="order-form">
+    <div class="mb-3">
+      <label class="form-label" for="personName">Person Name:</label>
+      <input type="text" class="form-control" id="personName" [(ngModel)]="newOrder.userName">
+    </div>
+
+    <div class="mb-3">
+      <label class="form-label" for="stockName">Stock Name:</label>
+      <select class="form-select" type="text" id="stockName" [(ngModel)]="newOrder.id">
+        <option [value]="stock.id" *ngFor="let stock of stocks">
+          Name: {{stock.stockName}}
+          price: {{stock.price}}
+        </option>
+      </select>
+    </div>
+
+    <!-- <div class="mb-3">
+      <label class="form-label" for="price">Price:</label>
+      <input type="number" disabled class="form-control" id="price" [(ngModel)]="newOrder.price">
+    </div> -->
+
+    <div class="mb-3">
+      <label class="form-label" for="quantity">Quantity:</label>
+      <input type="number" class="form-control" id="quantity" [(ngModel)]="newOrder.quantity" (focus)="clear($event)">
+    </div>
+    <button class="btn btn-primary" (click)="addOrder()">Add Order</button>
+  </div>
+
+  <table class="table">
+    <thead>
+      <tr>
+        <th>Person Name</th>
+        <th>Stock Name</th>
+        <th>Price</th>
+        <th>Quantity</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let order of orders">
+        <td>{{ order.userName }}</td>
+        <td>{{ order.stockName }}</td>
+        <td>{{ order.price }}</td>
+        <td>{{ order.quantity }}</td>
+      </tr>
+    </tbody>
+  </table>
+</div>

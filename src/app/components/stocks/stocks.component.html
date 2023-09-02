@@ -1,0 +1,23 @@
+<div class='card'>
+    <div class='card-header'>
+        {{title}}
+    </div>
+    <div class='card-body'>
+        <div class='table-responsive'>
+            <table class='table table-hover'>
+                <thead>
+                    <tr>
+                        <th>Name</th>
+                        <th>Price</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr (click)="openDialog(stock)" *ngFor="let stock of stocks">
+                        <td>{{stock.stockName}}</td>
+                        <td>{{stock.price}}</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
